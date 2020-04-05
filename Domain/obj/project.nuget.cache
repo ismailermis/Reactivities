@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "y0I5/EtPHEgyhhxQ8tQFhJq2n0TdpPrDbij5/UPtHpJQzET4cC0o0kybJBEzc0gnmeb+fIRTD+umtQ8zNwcK0A==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\IERMIS\\Desktop\\AspNetCoreReact\\Reactivities\\Domain\\Domain.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\IERMIS\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\IERMIS\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "iuBQWQ1NZS4V7PdST5w7h65JdUZwDn1N4IrEOo9o0D5gDZu/NCRlP7RFVwPcSumkeyeDpiPR5Gh1RAfmGGK09g==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\IERMIS\\Desktop\\AspNetCoreReact\\Reactivities\\Persistence\\Persistence.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\IERMIS\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\IERMIS\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
