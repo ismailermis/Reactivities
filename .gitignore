@@ -51,3 +51,5 @@ Version.h
 Version.cpp
 # Visual Studio 2015
 .vs/
+
+git rm -r "API/bin/" 
