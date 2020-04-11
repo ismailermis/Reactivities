@@ -1,25 +1,30 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\IERMIS\\Desktop\\AspNetCoreReact\\Reactivities\\Domain\\Domain.csproj": {}
+    "C:\\Projects\\localProjects\\+ASP.NETCore&React\\Reactivities\\Domain\\Domain.csproj": {}
   },
   "projects": {
-    "C:\\Users\\IERMIS\\Desktop\\AspNetCoreReact\\Reactivities\\Domain\\Domain.csproj": {
+    "C:\\Projects\\localProjects\\+ASP.NETCore&React\\Reactivities\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\IERMIS\\Desktop\\AspNetCoreReact\\Reactivities\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Projects\\localProjects\\+ASP.NETCore&React\\Reactivities\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\Users\\IERMIS\\Desktop\\AspNetCoreReact\\Reactivities\\Domain\\Domain.csproj",
-        "packagesPath": "C:\\Users\\IERMIS\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\IERMIS\\Desktop\\AspNetCoreReact\\Reactivities\\Domain\\obj\\",
+        "projectPath": "C:\\Projects\\localProjects\\+ASP.NETCore&React\\Reactivities\\Domain\\Domain.csproj",
+        "packagesPath": "C:\\Users\\ismail.ermis\\.nuget\\packages\\",
+        "outputPath": "C:\\Projects\\localProjects\\+ASP.NETCore&React\\Reactivities\\Domain\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\IERMIS\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\ismail.ermis\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -53,7 +58,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

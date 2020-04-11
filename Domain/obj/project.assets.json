@@ -30,7 +30,7 @@
   },
   "libraries": {
     "Microsoft.NETCore.Platforms/1.1.0": {
-      "sha512": "kz0PEW2lhqygehI/d6XsPCQzD7ff7gUJaVGPVETX611eadGsA3A877GdSlU0LRVMCTH/+P3o2iDTak+S08V2+A==",
+      "sha512": "G2OaGuePLwFijuBFF7MOpvB2W/Ysv2sg9wFSgc5lbMjHwKwC2uzd5r1Tp9EGS2gjg4HQfvnGc9UAjNGLocqIEw==",
       "type": "package",
       "path": "microsoft.netcore.platforms/1.1.0",
       "files": [
@@ -45,12 +45,11 @@
       ]
     },
     "NETStandard.Library/2.0.3": {
-      "sha512": "st47PosZSHrjECdjeIzZQbzivYBJFv6P2nv4cj2ypdI204DO+vZ7l5raGMiX4eXMJ53RfOIg+/s4DHVZ54Nu2A==",
+      "sha512": "8LkWC6tRdt4WZSgef5SzJedLf3kxY4xoiqNGANwutC2OwujstUEl3mpQzWXbL80JiXkErHD3h7wIiOA4xYZ+lA==",
       "type": "package",
       "path": "netstandard.library/2.0.3",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
         "build/netstandard2.0/NETStandard.Library.targets",
@@ -180,24 +179,30 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\IERMIS\\.nuget\\packages\\": {}
+    "C:\\Users\\ismail.ermis\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\IERMIS\\Desktop\\AspNetCoreReact\\Reactivities\\Domain\\Domain.csproj",
+      "projectUniqueName": "C:\\Projects\\localProjects\\+ASP.NETCore&React\\Reactivities\\Domain\\Domain.csproj",
       "projectName": "Domain",
-      "projectPath": "C:\\Users\\IERMIS\\Desktop\\AspNetCoreReact\\Reactivities\\Domain\\Domain.csproj",
-      "packagesPath": "C:\\Users\\IERMIS\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\IERMIS\\Desktop\\AspNetCoreReact\\Reactivities\\Domain\\obj\\",
+      "projectPath": "C:\\Projects\\localProjects\\+ASP.NETCore&React\\Reactivities\\Domain\\Domain.csproj",
+      "packagesPath": "C:\\Users\\ismail.ermis\\.nuget\\packages\\",
+      "outputPath": "C:\\Projects\\localProjects\\+ASP.NETCore&React\\Reactivities\\Domain\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\IERMIS\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\ismail.ermis\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netstandard2.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -231,7 +236,7 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
       }
     }
   }
