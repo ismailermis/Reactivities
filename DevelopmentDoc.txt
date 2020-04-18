@@ -1,0 +1,9 @@
+Bölüm 3
+1. Create React application
+console dan npx create-react-app "Proje adı"  --use-npm  --typescript komutu ile gerekli olan proje ve
+komponentleri download edilip kurulur.
+Örnek : npx create-react-app client-app  --use-npm  --typescript
+bu çalışmazsa npm install -g npx@latest ilk önce kurulur sonra da create-react-app "proje adı" 
+komutu ile proje oluşturulur.
+
+node js min 10 olmalı
