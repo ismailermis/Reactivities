@@ -1,8 +1,0 @@
-C:\Projects\localProjects\+ASP.NETCore&React\Reactivities\Domain\bin\Debug\netstandard2.0\Domain.deps.json
-C:\Projects\localProjects\+ASP.NETCore&React\Reactivities\Domain\bin\Debug\netstandard2.0\Domain.dll
-C:\Projects\localProjects\+ASP.NETCore&React\Reactivities\Domain\bin\Debug\netstandard2.0\Domain.pdb
-C:\Projects\localProjects\+ASP.NETCore&React\Reactivities\Domain\obj\Debug\netstandard2.0\Domain.csprojAssemblyReference.cache
-C:\Projects\localProjects\+ASP.NETCore&React\Reactivities\Domain\obj\Debug\netstandard2.0\Domain.AssemblyInfoInputs.cache
-C:\Projects\localProjects\+ASP.NETCore&React\Reactivities\Domain\obj\Debug\netstandard2.0\Domain.AssemblyInfo.cs
-C:\Projects\localProjects\+ASP.NETCore&React\Reactivities\Domain\obj\Debug\netstandard2.0\Domain.dll
-C:\Projects\localProjects\+ASP.NETCore&React\Reactivities\Domain\obj\Debug\netstandard2.0\Domain.pdb
