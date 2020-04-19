@@ -1,3 +1,12 @@
+﻿Visual studio extentions
+C# Extensions
+Auto Close Tag
+Bracket color
+ES7 React/Redux/GraphQL/React-Native snippets
+NuGet Package Manager
+SQLite
+Prettier - Code formatter
+
 Bölüm 3
 1. Create React application
 console dan npx create-react-app "Proje adı"  --use-npm  --typescript komutu ile gerekli olan proje ve
