@@ -26,6 +26,7 @@ namespace API.Controllers
         public async Task<ActionResult<IEnumerable<Value>>> Get()
         {
             var values = await _context.Values.ToListAsync();
+            var act = _context.Activities.ToList();
             return Ok(values);
         }
 
