@@ -25,3 +25,11 @@ preferances tan prefix  "_" tanımlanır.
 preferances tan user snippets ile çok kullanılan fonsiyonlar tanımlanabilir 
 buradan proje seçilir ve isim verilir "handlerSnippets" gibi. açılan sayfaya snippet.generator.app sitesinden 
 açılan sayfaya fonsiyon eklenir 
+
+Bölüm 5-
+1. client-app ta src foldurunda folder yapısı düzenlendi app/layout/models ve features folderları oluşturuldu.
+layout foldera app.tsx ve styles.css dosyaları eklendi gereksiz dosyalar silindi.
+2. models folduruna activity.ts modeli eklendi.
+3. App.tsx te activity modele göre listelendi.
+model eklendi böylece intelli sense olarak objelere ulaşılabildi axios ta dönüş değeri de  IActivity[] array 
+tipinde dönmesi sağlandı böylece ekrana baslan fielların type save i sağlanmış oldu.
