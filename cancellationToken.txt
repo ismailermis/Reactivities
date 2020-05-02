@@ -1,0 +1,92 @@
+So what we're going to talk about next is the cancellation tokens that we have available inside 
+our  handlers and our I request handler when we implement this particular interface creates a handle method
+that has two parameters wants to query objects that we create above here and the other ones 
+this cancellation  token which I've completely ignored up until now. 
+Now I'll say it now that we're not actually going to be using these in our application but 
+I do want  to demonstrate what they are and what they're going to be used for and
+I'm sure you've been on a Web  site before where you've made a request for a page and it just sits
+there supposedly loading.  Eventually you get bored and you either click the stop button or 
+maybe a five to reload the page or  you do something else to abort the request and users 
+kind of expect to page to load pretty much instantly  leaves these days and when it doesn't a quick refresh 
+can be very tempting.  And this is all well and good for the user.  
+But what about our poor server if our users hitting a refresh button five times they're not users hitting  or 
+sending the request five times to our server.  Now if the users waiting a significant amount of time for a response 
+that means our server is probably  working quite hard to go and get the response or there's something else going on.
+But if that refresh the page then that that original request has been aborted but our server doesn't 
+know about it and it's going to continue that request or at least that's how it stands at this moment
+in time and if our server goes ahead and completes this request even though the users aborted the request
+then it's just going to throw the results of that request away and do absolutely nothing with them so
+let's take a look at how we can use less and the details handle that we have here is not a particularly  
+good example because the fine day sync request is a little bit complicated to use the cancellation token  in here.
+So I'm just going to open up the list request that we have and if I hover overly to list async then
+we can see that list takes a parameter of the cancellation token  and this means if it receives
+a cancellation request or a request has been aborted then it's got the  ability to cancel a request.  
+Now it's going to be difficult to demonstrate because of my past my cancellation token in here and then
+I go to postmen I click send it's kind of difficult to Hitler cancel request button to see what's going  on. 
+So what I'm going to do is I'm just going to add some delay into my list request so that we can see  these cancellation tokens 
+and what they actually do and whilst my list method here if it receives a  cancellation token because the request 
+has been aborted then it's going to automatically cancel this  request.  We can also make use of these cancellation tokens
+manually as well and that's what I'll do in this case  and what I'm going to do I'm just going to create a try catch block
+inside here and I'm going to add  a for loop and say for var i equals zero and then i is less than 10 and 
+I plus plus as the iterator.  And then what I'll do is I'm going to call it say to a cancellation token through 
+if cancellation requested  and if it hasn't then I'm gonna say a wait and say task don't delay and I'll delay by a second
+so I'll  pay I'll put in 1000 there and then I'll pass in the cancellation token to list method because the delay  
+also can take a cancellation token as a second parameter and but I also want to do is I'm just going  to 
+log the information here into our terminal window.  So I'm just going to bring in the I logger into our 
+handler as well and we can inject this in the air  so I say I logger and we need to give the I logger 
+the name of the class that we're we want to log from  and in this case it's gonna be our list class.  
+Now just make sure that we bring in Microsoft the extensions log in and we'll call it logger and just 
+hover over the list and make sure that we're logging against application dot activities dot list and 
+that's the case in here.  Now I'm just going to need to initialize this field from parameter. 
+And once again I'll take out this dot and then I can go down into my full loop here.  
+And each time this executes I'll say logger dot log information and I'll use the dollar in front of  the quotes
+and say task and then in curly brackets are put in.  I has completed and using the string format in this way
+will mean their eye gets replaced with whatever  the number is of the iteration we're currently on and what I also 
+want to do is catch what we're throwing  from our cancellation token here so I'm gonna say catch Exception e x and 
+I'm going to add a condition  onto this and say When X is task cancelled exception and inside the catch and only 
+to bring in system  in this case as well.  And inside the catch I'm just gonna say logger the log information
+and I'm going to say task was cancelled  and I'm just gonna open up the terminal and go back to
+
+Bundan sonra konuşacağımız şey, işleyicilerimizin içinde bulunan iptal belirteçlerimiz ve bu özel arabirimi uyguladığımızda
+işleyicim istediğim, yukarıda oluşturduğumuz nesneleri sorgulamak isteyen iki parametrenin bulunduğu bir 
+tanıtıcı yöntemi oluşturur ve Diğeri ise şimdiye kadar tamamen görmezden geldiğim bu iptal jetonu. 
+Şimdi bunları aslında uygulamamızda kullanmayacağımızı söyleyeceğim ama ne olduklarını ve ne için kullanılacağını göstermek
+istiyorum ve eminim bir Web sitesi daha önce bir sayfa için bir istekte bulunduğunuzda ve sadece orada yükleme sözde oturur. 
+Sonunda sıkılırsınız ve sayfayı yeniden yüklemek için durdur düğmesini veya belki bir beş tıklarsınız veya 
+isteği iptal etmek için başka bir şey yaparsınız ve kullanıcılar sayfanın hemen yüklenmesini bekler ve bu günlerde hızlı 
+yenileme çok cazip olabilir. Ve bu kullanıcı için iyi ve iyidir. Ancak, kullanıcılarımız beş kez yenile düğmesine 
+basarlarsa kullanıcı istemezse veya sunucumuza beş kez istek gönderirse kötü sunucumuz ne olur? 
+Şimdi bir yanıt için önemli miktarda zaman bekleyen kullanıcılar sunucumuz gitmek ve yanıt almak için oldukça çalışıyoruz
+veya başka bir şey var demektir. Ancak bu sayfayı yenilerse, orijinal istek iptal edildi, ancak sunucumuz bunu bilmiyor 
+ve bu isteği devam ettirecek veya en azından şu anda duruyor ve sunucumuz devam edip tamamlanıyorsa Bu istek,
+kullanıcılar isteği iptal etse bile, bu isteğin sonuçlarını atmaya ve onlarla kesinlikle hiçbir şey yapmayacak,
+bu yüzden daha az nasıl kullanabileceğimize bir göz atalım ve burada sahip olduğumuz ayrıntılar özellikle değil 
+güzel bir örnek senkronizasyon isteğinin burada iptal jetonunu kullanması biraz karmaşık olduğundan iyi bir örnek. 
+Bu yüzden sadece sahip olduğumuz liste isteğini açacağım ve async'i aşırı listelemek için listenin iptal belirtecinin
+bir parametresini aldığını görebiliriz ve bu bir iptal isteği alırsa veya bir istek varsa iptal edildikten sonra bir 
+isteği iptal etme yeteneği var. Şimdi buradaki iptal jetonum nedeniyle göstermek zor olacak ve sonra gönderenlere 
+tıklıyorum gönderdim Hitler'in istek düğmesini iptal etmek için neler olduğunu görmek zor. Bu yüzden, 
+bu iptal jetonlarını ve gerçekte ne yaptığını görebilmemiz için liste isteğime biraz gecikme ekleyeceğim ve 
+istek nedeniyle bir iptal jetonu alırsa liste yöntemimi burada göreceğim. iptal edildiğinde, bu istek otomatik olarak 
+iptal edilecektir. Ayrıca bu iptal jetonlarını manuel olarak da kullanabiliriz ve bu durumda yapacağım şey budur ve 
+ne yapacağım Sadece burada bir try catch bloğu oluşturacağım ve ekleyeceğim a döngüsü için ve var i için sıfıra eşittir
+ve sonra i 10'dan azdır ve yineleyici olarak artı artı artıdır. Ve sonra yapacağım şey, iptal istendiğinde bir 
+iptal jetonuna söyleyeceğim ve eğer o zaman bir bekleme diyeceğim ve görev gecikmediğini söyleyeceğim ve geciktireceğim 
+bir saniye kadar ben orada 1000 koyacağım ve sonra gecikme de ikinci bir parametre olarak bir iptal belirteci alabilir ve 
+aynı zamanda ben yapmak istiyorum Buradaki bilgileri terminal penceremize kaydedeceğim. Bu yüzden sadece 
+I logger'ı işleyicimize de getireceğim ve bunu havaya enjekte edebiliriz, böylece logger diyorum ve I logger'a istediğimiz
+sınıfın adını vermeliyiz giriş yapın ve bu durumda liste sınıfımız olacak. Şimdi, uzantıları oturum açtığımızda 
+Microsoft'a getirdiğimizden ve günlükçü olarak adlandırdığımızdan ve listenin üzerine gelip uygulama nokta etkinlikleri
+nokta listesine karşı oturum açtığımızdan emin olun ve burada durum böyle. Şimdi sadece bu alanı parametreden başlatmam
+gerekecek. Ve bir kez daha bu noktayı çıkaracağım ve sonra tam döngüme girebilirim. Ve bu her çalıştırdığında ben logger
+nokta günlük bilgileri söyleyeceğim ve ben tırnak önünde dolar kullanmak ve görev söyleyeceğim ve sonra 
+kıvırcık parantez koymak. Ben tamamladım ve bu şekilde dize biçimini kullanmak anlamına gelir anlamına gelir Gözleri,
+şu anda üzerinde bulunduğumuz yinelemenin sayısı ne olursa olsun değiştirilir ve ayrıca yapmak istediğim şey, 
+iptal jetonumuzdan attığımız şeyi yakalamaktır, bu yüzden Exception ex'i yakala diyeceğim ve gidiyorum buna 
+bir koşul eklemek ve X'in görev iptal edildiğinde özel durum ve yakalamanın içinde olduğunu söylemek ve yalnızca 
+bu durumda sistemi getirmek. Ve yakalamanın içinde logger'a günlük bilgilerini söyleyeceğim ve görevin 
+iptal edildiğini ve sadece terminali açacağım ve
+Geri bildirim gönder
+Geçmiş
+Kaydedilenler
+Topluluk

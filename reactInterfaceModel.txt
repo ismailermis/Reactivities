@@ -1,0 +1,80 @@
+So what we're going to do now is add some typing into our application and we're going to start by adding  
+an interface for our activities and what we'll do we'll get to it.  Our explorer and inside the app folder 
+I'm just gonna create an avenue folder and just call it models.  And inside this model's folder I'm just gonna 
+create a new file and call it activity dot t s and inside  this file what I'm going to do is just export an interface 
+and I'm going to call it AI activity and  conventionally in interfaces typically starts with an AI. 
+It's not compulsory but it is kind of conventional and what we want to do in this interface is describe  
+the structure of our activity objects.  Now it's going to have an I.D. which is going to be a type string our title is
+gonna be a string the  description is also going to be a string.  The category once again is a string the dates is
+gonna be a type of dates.  The city will be a string and the venue will also be a string and this is the structure 
+of our activity  objects at this moment now interfaces in typescript do not appear in the compiled and built javascript 
+that we're making here.  And when we just want to define the structure of an object and we want strong typing against
+this particular  object then interfaces all the way to go so you might be wondering why I've not used a class here 
+instead  of an interface and a class is really an I kind of object factory are blueprints of what an object is  
+supposed to look like and Len implemented and an interface is a structure used solely for type checking  and the other
+thing I wanted to point out is if we do create a class which we can also use for type  checking by the way this will
+get transpired.  The class itself will get transposed into javascript whereas this interface does not. 
+So the actual generated code is a bit shorter when we use an interface.  So now what we have an interface 
+let's make use of it in our application.  So I'm just going to head over to Apple TSX and first of all 
+we want to define the state the shape of  our state object so above the class itself. 
+I'm just going to add an interface and I'm going to call it I state  and inside here we will define 
+what's inside our state and it's going to be the activities which is  gonna be of type eye activity and an 
+array and in order to tell our components about this state if we  hover over the components itself we can see 
+that the component itself can accept a type of parameter  and the first type parameter is Philip properties that
+we're receiving in this component.  And the second parameter is Phyllis states that we're defining in this component so
+we're not actually  sending any properties down to our components but we are defining the state.  So I'm just gonna add 
+an empty object for our props and then I'm just going to pass in the I state as  the type parameter inside here what we can do 
+then is tell the states that it's a type of ice state.  And if we were to attempt to add any additional states properties and 
+that's just our test and say it's  an empty string we do get an error now because test does not exist in type I state what 
+we can also  do with this particular state property is actually make it read only now it's never a good practice  to mutate states directly 
+and a to application.  And the only way that we should modify our state is by using the less set state method now.  
+This doesn't make any difference to our code because we're already using this dot set states.  
+But if I was to attempt to use this dot state's equals then I'll immediately get an error saying that  state is a read only property and
+this forces us land to use this dot set states instead.  So our activities now is a type of an array of eye activity and 
+if we look at the activities object  we're setting inside this dot state.  Well this has gotten any state at this moment so
+what we also need to do is tell our axioms method what  it's actually going to be returning.  Now at the moment it returns and
+US response of type any but we can define the return property inside  here as well all the return type inside here.  
+And from our gets method what we're actually returning is going to be an array of activities.  
+So what we'll do is we'll say I activity in here and make it an array and then if we hover over our  act our activities 
+we can see that this is now set to a type of activity array and we can see if we  have raised the response.  
+This is also now a type of axioms response I activity array.  Now if we scroll further down what we can do now is take out 
+our any parameter inside here and if we  hover over the activity then typescript is smart enough to work out that
+if we're getting an element  from our activities array then it's going to be of type II activity. 
+And what this also means that if I attempts to use the name that I did earlier now this time we are  going to get an error
+because name does not exist on the type of activity. 
+And what we also find is our application 
+
+Şimdi yapacağımız şey, uygulamamıza biraz yazı yazmak ve faaliyetlerimiz için bir arayüz ekleyerek başlayacağız ve ne yapacağız.
+Kaşifimiz ve uygulama klasörünün içinde sadece bir cadde klasörü oluşturacağım ve sadece modeller diyeceğim. Ve bu modelin klasöründe 
+sadece yeni bir dosya oluşturacağım ve etkinlik dot ts olarak adlandıracağım ve bu dosyanın içinde yapacağım şey sadece bir arayüz 
+ihraç etmek ve buna AI etkinliği ve geleneksel olarak arayüzlerde diyeceğim tipik olarak bir yapay zeka ile başlar. Zorunlu değil 
+ama bir tür geleneksel ve bu arayüzde yapmak istediğimiz şey aktivite nesnelerimizin yapısını tanımlamak. Şimdi bir kimliği olacak.
+Bu bir tür dizgi olacak, başlığımız bir dize olacak, açıklama da bir dize olacak. Kategori bir kez daha tarihler bir tür tarih olacak bir dizedir.
+Şehir bir dize olacak ve mekan da bir dize olacak ve bu şu anda aktivite nesnelerimizin yapısı şimdi burada daktilodaki arayüzler burada yaptığımız
+derlenmiş ve inşa edilen javascript'te görünmüyor. Ve sadece bir nesnenin yapısını tanımlamak istediğimizde ve bu belirli nesneye karşı
+güçlü bir yazım yapmak istediğimizde, o zaman tüm yol boyunca ara yüzler oluştururlar, bu yüzden burada neden bir arabirim yerine 
+bir sınıf kullanmadığımı merak ediyor olabilirsiniz. gerçekten bir tür nesne fabrikası, bir nesnenin neye benzemesi gerektiğinin planları ve 
+Len uygulandı ve bir arayüz sadece tip kontrolü için kullanılan bir yapıdır ve belirtmek istediğim diğer bir şey, bir sınıf oluşturmamız ayrıca 
+bu durumun geçerlilik kazanmasıyla tür denetimi için de kullanılabilir. Sınıfın kendisi javascript'e aktarılırken, bu arayüz kullanılamaz.
+Bu yüzden bir arayüz kullandığımızda üretilen kod biraz daha kısadır. Şimdi bir arayüzümüz var, onu uygulamamızda kullanalım.
+Bu yüzden sadece Apple TSX'e gideceğim ve her şeyden önce durumu devlet neslimizin şeklini sınıfın kendisinin üzerinde tanımlamak istiyoruz. 
+Ben sadece bir arayüz ekleyeceğim ve buna ben diyeceğim diyeceğim ve içinde devletimizin içinde ne olduğunu tanımlayacağız ve 
+bu tür göz aktivitesi ve bir dizi ve sırayla olacak aktiviteler olacak bileşenlerin üzerine geldiğimizde bileşenlerimize bu durumu anlatmak 
+için bileşenin kendisinin bir tür parametre kabul edebileceğini ve ilk tür parametresinin bu bileşende aldığımız Philip özellikleri olduğunu görebiliriz.
+Ve ikinci parametre Phyllis, bu bileşende tanımladığımızı belirtiyor, bu yüzden bileşenlerimize aslında herhangi bir özellik göndermiyoruz, 
+ancak durumu tanımlıyoruz. Bu yüzden sadece sahne ekipmanlarımız için boş bir nesne ekleyeceğim ve sonra içerideki tip parametresi olarak
+I durumunu geçeceğim, sonra yapabileceğimiz şeylere bir tür buz durumu olduğunu söyleyeceğim. Ve herhangi bir ek durum özelliği eklemeye çalışacak olsaydık
+ve bu sadece bizim testimiz ve boş bir dize olduğunu söylersek, şimdi bir hata alıyoruz çünkü test türü mevcut değil, bu özel durum özelliğiyle de 
+neler yapabileceğimizi sadece şimdi okumanızı sağlamak, devletleri doğrudan değiştirmek ve uygulamaya uygulamak asla iyi bir uygulamadır. 
+Ve durumumuzu değiştirmemiz için tek yol şimdi daha az ayarlanmış durum yöntemini kullanmaktır. Bu, kodumuzda herhangi bir fark yaratmıyor
+çünkü zaten bu nokta kümesi durumlarını kullanıyoruz. Ama eğer bu nokta durumunun eşitlerini kullanmaya çalışacak olsaydım, hemen devletin 
+salt okunur bir özellik olduğunu söyleyen bir hata alırım ve bu bizi bunun yerine bu nokta kümesi durumlarını kullanmaya zorlar.
+Yani şimdi faaliyetlerimiz bir tür göz aktivitesidir ve faaliyetler nesnesine bakarsak, bu nokta durumunun içinde ayarlıyoruz. 
+Bu şu anda herhangi bir durum kazanmıştır, bu yüzden de yapmamız gereken şey, aksiyom yöntemimize gerçekte ne döndüreceğini söylemek. 
+Şimdi dönüyor ve herhangi bir tür ABD yanıtı ama biz burada içindeki dönüş özelliğini ve buradaki tüm dönüş türünü tanımlayabiliriz.
+Ve bizim alma yöntemimizden aslında geri döndürdüğümüz şey bir dizi etkinlik olacak. Yani burada yapacağım ve burada bir dizi yapacağımı söyleyeceğiz 
+ve daha sonra eylemlerimizin üzerine gelirsek, bunun artık bir tür etkinlik dizisine ayarlandığını görebiliriz ve yanıtı artırdı.
+Bu aynı zamanda bir aksiyom tepki I aktivite dizisidir. Şimdi daha aşağı kaydırırsak, şu anda yapabileceğimiz herhangi bir parametreyi çıkarırız ve 
+aktivitenin üzerine gelirsek, daktilo, faaliyetler dizimizden bir öğe alıyorsak, o zaman tip II aktivite olmalıdır. Ve bu da şu anda daha önce 
+yaptığım adı kullanmaya çalışırsam bir hata alırız,
+çünkü etkinlik türünde isim mevcut değildir. Ve bulduğumuz şey bizim uygulamamız
