@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Header, Icon, List } from "semantic-ui-react";
 import axios from "axios";
 import { IActivity } from "../models/activity";
+import { NavBar } from "../nav/NavBar";
+import "semantic-ui-css/semantic.min.css";
 interface IState {
 	activities: IActivity[];
 }
@@ -14,17 +16,11 @@ const App = () => {
 			.then((response) => {
 				setActivities(response.data);
 			});
-		return () => {
-			console.log("test");
-		};
 	}, []);
 
 	return (
 		<div>
-			<Header as='h2'>
-				<Icon name='users' />
-				<Header.Content>Reactivities</Header.Content>
-			</Header>
+			<NavBar />
 			<List>
 				{activities.map((activity) => (
 					<List.Item key={activity.id}>
