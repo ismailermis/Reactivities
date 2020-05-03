@@ -5,6 +5,7 @@ import { IActivity } from "../models/activity";
 import "semantic-ui-css/semantic.min.css";
 import { NavBar } from "../../features/nav/NavBar";
 import { ActivityDashboard } from "../../features/activities/dashboard/ActivityDashboard";
+import { ActivityForm } from "../../features/activities/form/ActivityForm";
 interface IState {
 	activities: IActivity[];
 }
@@ -24,6 +25,7 @@ const App = () => {
 			<NavBar />
 			<Container style={{ marginTop: "7em" }}>
 				<ActivityDashboard activities={activities} />
+				<ActivityForm />
 			</Container>
 		</Fragment>
 	);
