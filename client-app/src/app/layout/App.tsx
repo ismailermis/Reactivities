@@ -1,11 +1,11 @@
 import React, { useState, useEffect, Fragment } from "react";
-import { Header, Icon, Container } from "semantic-ui-react";
+import { Container } from "semantic-ui-react";
 import axios from "axios";
 import { IActivity } from "../models/activity";
 import "semantic-ui-css/semantic.min.css";
 import { NavBar } from "../../features/nav/NavBar";
 import { ActivityDashboard } from "../../features/activities/dashboard/ActivityDashboard";
-import ActivityList from "../../features/activities/dashboard/ActivityList";
+// import ActivityList from "../../features/activities/dashboard/ActivityList";
 
 interface IState {
 	activities: IActivity[];
@@ -19,18 +19,40 @@ const App = () => {
 	const [editMode, setEditMode] = useState(false);
 
 	const handleSelectedActivity = (id: string) => {
-		setSelectedActivity(activities.filter((a) => a.id == id)[0]);
+		setSelectedActivity(activities.filter((a) => a.id === id)[0]);
+		setEditMode(false);
 	};
 	const handleOpenCreateForm = () => {
 		setSelectedActivity(null);
 		setEditMode(true);
+	};
+	const handleCreateActivity = (activity: IActivity) => {
+		setActivities([...activities, activity]);
+		setSelectedActivity(activity);
+		setEditMode(false);
+	};
+	const handleEditActivity = (activity: IActivity) => {
+		setActivities([
+			...activities.filter((a) => a.id !== activity.id),
+			activity,
+		]);
+		setSelectedActivity(activity);
+		setEditMode(false);
+	};
+	const handleDeleteActivity = (id: string) => {
+		setActivities([...activities.filter((a) => a.id !== id)]);
 	};
 
 	useEffect(() => {
 		axios
 			.get<IActivity[]>("http://localhost:5000/api/activities/")
 			.then((response) => {
-				setActivities(response.data);
+				let activities: IActivity[] = [];
+				response.data.forEach((activity) => {
+					activity.date = activity.date.split(".")[0];
+					activities.push(activity);
+				});
+				setActivities(activities);
 			});
 	}, []);
 
@@ -45,6 +67,9 @@ const App = () => {
 					editMode={editMode}
 					setEditMode={setEditMode}
 					setSelectedActivity={setSelectedActivity}
+					createActivity={handleCreateActivity}
+					editActivity={handleEditActivity}
+					deleteActivity={handleDeleteActivity}
 				/>
 			</Container>
 		</Fragment>
